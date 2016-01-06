@@ -26,6 +26,7 @@ namespace PersonalWebSiteAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            //测试提交
             var json = config.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
             config.Formatters.Remove(config.Formatters.XmlFormatter);
