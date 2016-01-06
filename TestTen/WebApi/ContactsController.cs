@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Common
+namespace WebApi
 {
-   public class ContractsController:ApiController
+    public class ContractsController : ApiController
     {
         static List<Contact> contracts;
         static ContractsController()
