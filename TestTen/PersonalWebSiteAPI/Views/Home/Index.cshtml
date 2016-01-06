@@ -1,0 +1,32 @@
+﻿<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('@Url.Action("Persions","api")', function (data) {
+            $.each(data, function (key, val) {
+                var attr = "Name:" + val.Name + "Commodity:" + val.Commodity + "$:" + val.Price;
+                $('<li/>', { text: attr }).appendTo($('#persions'));
+            });
+        });
+    });
+
+    function find() {
+        var id = $('#persionId').val();
+        $.post('@Url.Action("Persions","api")/' + id, function (data) {
+            var attr = "Name:" + data.Name + "Commodity:" + data.Commodity + "$:" + data.Price;
+            $('#persion').text(attr);
+
+        }).fail(function (jqXHR, setting, err) {
+            $('#persion').text(err);
+        });
+    }
+</script>
+
+<div>
+    <div id="persions"></div>
+    <div>
+        Id:
+        <input type="text" id="persionId" />
+        <input type="button" value="查询" onclick="find();" />
+    </div>
+    <p id="persion"></p>
+</div>
