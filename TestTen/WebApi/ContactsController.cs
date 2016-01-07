@@ -8,10 +8,10 @@ using System.Web.Http;
 
 namespace WebApi
 {
-    public class ContractsController : ApiController
+    public class ContactsController : ApiController
     {
         static List<Contact> contacts;
-        static ContractsController()
+        static ContactsController()
         {
             contacts = new List<Contact>();
             contacts.Add(new Contact { Id = "001", Name = "张三", PhoneNo = "1234-312123141", EmailAddress = "zhangsan@gmail.com", Address = "张三省张三市张三街3号" });
